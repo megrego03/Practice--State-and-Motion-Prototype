@@ -109,7 +109,15 @@ header {
     color:#444; 
 }
 
-/* TODO: focus and checked state with more than color. */
+.choice input:focus-visible {
+    outline:.2rem solid var(--focus);
+    outline-offset:.15rem;
+}
+
+.choice input:checked + label {
+    border-width:.25rem;
+    box-shadow:inset .4rem 0 0 var(--brand);
+}
 
 summary { 
     cursor:pointer; 
@@ -120,6 +128,26 @@ summary {
     margin-top:.75rem; 
     padding:1rem; 
 }
-/* TODO: add purposeful gradients/shadows/filters/masks/blending across specimens. */
-/* TODO: define and trigger one short, finite keyframe animation. */
+.confirmation {
+    margin-top:.75rem;
+    padding:1rem;
+    border-left:.3rem solid var(--brand);
+    background:var(--surface);
+}
+
+details[open] .confirmation {
+    animation:reveal-confirmation .35s ease-out 1;
+}
+
+@keyframes reveal-confirmation {
+    from {
+        opacity:0;
+        transform:translateY(-.4rem);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 /* TODO: add a prefers-reduced-motion strategy that preserves feedback. */
