@@ -7,28 +7,34 @@
     --focus:#0077b6; 
     --space:1rem; 
 }
+
 * { 
     box-sizing:border-box; 
 }
+
 body { 
     margin:0; 
     color:var(--ink); 
     background:var(--surface); 
     font:1rem/1.5 Arial,sans-serif; 
 }
+
 header, main { 
     width:min(100% - 2rem,65rem); 
     margin-inline:auto; 
 }
+
 header { 
     padding-block:2rem 1rem; 
 }
+
 .eyebrow { 
     color:var(--brand); 
     font-weight:700; 
     text-transform:uppercase; 
     letter-spacing:.05em; 
 }
+
 .specimen { 
     margin-block:var(--space); 
     padding:1.25rem; 
@@ -36,14 +42,43 @@ header {
     border:1px solid #ccc; 
     border-radius:.5rem; 
 }
-.action { 
-    display:inline-block; 
-    padding:.75rem 1rem; /* TODO: default action style and explicit transitions. */ 
+
+.action {
+    display:inline-block;
+    padding:.75rem 1rem;
+    color:var(--brand);
+    background:var(--paper);
+    border:.15rem solid var(--brand);
+    border-radius:.4rem;
+    font-weight:700;
+    text-decoration:underline;
+    text-underline-offset:.2rem;
 }
-.action::after { 
-    /* TODO: nonessential decorative cue; keep content empty. */ 
+
+.action::after {
+    content:"";
+    display:inline-block;
+    width:.45rem;
+    height:.45rem;
+    margin-left:.6rem;
+    border-top:.15rem solid currentColor;
+    border-right:.15rem solid currentColor;
+    transform:rotate(45deg);
 }
-/* TODO: hover, focus-visible, and active action states. */
+
+.action:hover {
+    background:var(--brand);
+    color:var(--paper);
+}
+
+.action:focus-visible {
+    outline:.2rem solid var(--focus);
+    outline-offset:.2rem;
+}
+
+.action:active {
+    transform:translateY(.15rem);
+}
 
 .choice { 
     display:grid; 
@@ -51,11 +86,13 @@ header {
     gap:.75rem; 
     align-items:start; 
 }
+
 .choice input { 
     width:1.25rem; 
     height:1.25rem; 
     margin-top:.25rem; 
 }
+
 .choice label { 
     display:grid; 
     gap:.1rem; 
@@ -63,18 +100,22 @@ header {
     border:.15rem solid #777; 
     border-radius:.4rem; 
 }
+
 .choice-title { 
     font-weight:700; 
 }
+
 .choice-help { 
     color:#444; 
 }
+
 /* TODO: focus and checked state with more than color. */
 
 summary { 
     cursor:pointer; 
     font-weight:700; 
 }
+
 .confirmation { 
     margin-top:.75rem; 
     padding:1rem; 
