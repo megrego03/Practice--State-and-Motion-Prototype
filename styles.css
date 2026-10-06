@@ -47,12 +47,15 @@ header {
     display:inline-block;
     padding:.75rem 1rem;
     color:var(--brand);
-    background:var(--paper);
+    background: linear-gradient(to bottom, var(--paper), #f3f3f3);
     border:.15rem solid var(--brand);
     border-radius:.4rem;
     font-weight:700;
     text-decoration:underline;
     text-underline-offset:.2rem;
+    transition-property:color, background-color, transform;
+    transition-duration:.2s;
+    transition-timing-function:ease;
 }
 
 .action::after {
@@ -67,7 +70,7 @@ header {
 }
 
 .action:hover {
-    background:var(--brand);
+    background:linear-gradient(to bottom, var(--brand), #68102f);
     color:var(--paper);
 }
 
