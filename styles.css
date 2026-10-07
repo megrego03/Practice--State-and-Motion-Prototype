@@ -153,4 +153,14 @@ details[open] .confirmation {
         transform:translateY(0);
     }
 }
-/* TODO: add a prefers-reduced-motion strategy that preserves feedback. */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .action {
+        transition:none;
+    }
+
+    details[open] .confirmation {
+        animation:none;
+    }
+}
